@@ -8,6 +8,8 @@ table 50100 "Student Registration"
         field(1; "Student No."; Code[20])
         {
             Caption = 'Student No.';
+
+            TableRelation = Customer;
         }
         field(2; "Student Name"; Text[100])
         {
@@ -18,10 +20,9 @@ table 50100 "Student Registration"
             Caption = 'Date of Birth';
         }
 
-        field(4; "Gender"; Option)
+        field(4; "Gender"; Enum "Gender Enum")
         {
             Caption = 'Gender';
-            OptionMembers = "Male","Female","Other";
         }
 
         field(5; "Phone No."; Text[30])

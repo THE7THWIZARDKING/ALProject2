@@ -1,20 +1,16 @@
-page 50100 Student
+page 50101 "Student Card"
 {
-    Caption = 'Student';
-    PageType = List;
+    Caption = 'Student Card';
+    PageType = Card;
     SourceTable = "Student Registration";
-    ApplicationArea = All;
-    UsageCategory = Lists;
-    CardPageId = "Student Card";
 
     layout
     {
         area(Content)
         {
-
-            repeater(General)
+            group(General)
             {
-                Caption = 'General Information';
+                Caption = 'General';
 
                 field("Student No."; Rec."Student No.")
                 {
@@ -31,7 +27,7 @@ page 50100 Student
                     ApplicationArea = All;
                     ToolTip = 'Date of Birth';
                 }
-                field("Gender"; Rec."Gender")
+                field(Gender; Rec.Gender)
                 {
                     ApplicationArea = All;
                     ToolTip = 'Gender';
@@ -56,29 +52,12 @@ page 50100 Student
                     ApplicationArea = All;
                     ToolTip = 'Total Course Fees';
                 }
-                field("Active"; Rec."Active")
+                field(Active; Rec.Active)
                 {
                     ApplicationArea = All;
                     ToolTip = 'Is student currently active?';
                 }
             }
-
         }
     }
-
-    // ── Page Triggers ─────────────────────────
-    // trigger OnOpenPage()
-    // begin
-    //     Message('Welcome to Student Card!');
-    // end;
-
-    // trigger OnAfterGetRecord()
-    // begin
-    //     // Runs after every record is loaded
-    // end;
-
-    // trigger OnNewRecord(BelowxRec: Boolean)
-    // begin
-    //     // Runs when a new record is created
-    // end;
 }
